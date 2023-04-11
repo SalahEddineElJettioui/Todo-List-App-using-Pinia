@@ -6,5 +6,12 @@ import TodoApp from './components/TodoApp.vue';
   <TodoApp />
 </template>
 
-<style scoped>
+<style>
+#app{
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: anatialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 </style>
