@@ -3,19 +3,26 @@ import { defineStore } from "pinia";
 export const useTodoListStore = defineStore('todoList', {
     state: () => ({
         todoList: [],
-        id:0
+        id: 0
     }),
     actions: {
-        addTodo(item){
-            this.todoList.push({item, id: this.id++, completed: false})
+        addTodo(item) {
+            this.todoList.push({ item, id: this.id++, completed: false })
         },
 
         // filter method create a new array eleminating the todo item which I passed in the parameteres 
 
-        deleteTodo(itemId){
+        deleteTodo(itemId) {
             this.todoList = this.todoList.filter((object) => {
                 return object.id !== itemId
             })
+        },
+
+        toggleCompleted(idTofind) {
+            const todo = this.todoList.find((obj) => obj.id === idTofind)
+            if (todo) {
+                todo.completed = !todo.completed 
+            }
         }
     }
 })
