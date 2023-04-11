@@ -6,6 +6,7 @@
             {{ todo.item }}
         </span>
         <span @click.stop="toggleCompleted(todo.id)" >&#10004; </span>
+        <span @click.stop="deleteTodo(todo.id)" >&#10060; </span>
     </div>
 </div>
 
@@ -21,6 +22,7 @@ const store = useTodoListStore()
 const { todoList } = storeToRefs(store);
 
 const { toggleCompleted } = store;
+const { deleteTodo } = store;
 
 </script>
 
